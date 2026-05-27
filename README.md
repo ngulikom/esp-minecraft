@@ -216,5 +216,5 @@ berarti kita sudah masuk era:
 
 ---
 
-Fork base: https://github.com/p2r3/bareiron  
+Project base: https://github.com/p2r3/bareiron  
 Port by: Ngulikom
