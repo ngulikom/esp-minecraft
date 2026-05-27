@@ -1,33 +1,32 @@
 # esp-minecraft
-# bareiron-esp32 (PlatformIO Ready Port)
 
 Halo sobat digital!!
 
-ini adalah versi **PlatformIO-ready port** dari project bareiron Minecraft server 😭🔥
+ini adalah versi **bareiron yang udah disiapin biar tinggal upload di PlatformIO** 😭🔥
 
 jadi tujuan repo ini simpel:
 
-> ESP32-C3 langsung jalan sebagai Minecraft server tanpa setup ribet
+> clone → buka di VSCode → upload ke ESP32-C3 → jalan
+
+project ini adalah port / versi siap pakai dari bareiron Minecraft server, jadi kamu gak perlu ribet setup manual yang aneh-aneh.
 
 ---
 
 # ⚠️ DISCLAIMER
 
-project ini:
+project ini adalah:
 
-- experimental Minecraft server implementation
-- tidak 100% vanilla compliant
-- performa tergantung ESP32 (RAM & WiFi)
-- cocok untuk riset, eksperimen, dan konten Ngulikom
+MAKSA BIKIN SERVER MINECRAFT DI BENDA YANG LEBIH KECIL DARI KOREK GAS YANG SERING ILANG DI WARUNG ITU!!!
 
 ---
 
 # 🎯 TUJUAN PROJECT
 
-- bikin bareiron bisa langsung dipakai di PlatformIO
+- bikin bareiron versi yang gampang dipakai
 - target ESP32-C3
-- hapus proses build manual yang ribet
-- fokus ke "plug and play flash & run"
+- langsung jalan di PlatformIO
+- gak perlu setup build manual yang ribet
+- fokus ke konsep **plug and play flash & run**
 
 ---
 
@@ -45,27 +44,35 @@ bareiron = Minecraft server minimal untuk device embedded low memory
 
 ## 1. Install PlatformIO
 
-Install VSCode + extension PlatformIO:
+install VSCode + extension PlatformIO:
 
 https://platformio.org/install/ide?install=vscode
+
+---
 
 ## 2. Clone Repository
 
 ```bash
-git clone https://github.com/your-repo/bareiron-esp32
-cd bareiron-esp32
+git clone https://github.com/ngulikom/esp-minecraft
+cd esp-minecraft
 ```
+
+---
 
 ## 3. Buka di VSCode
 
 - buka folder project
 - tunggu PlatformIO indexing selesai
 
+---
+
 ## 4. Pastikan Board ESP32-C3
 
 cek file:
 
-`platformio.ini`
+```ini
+platformio.ini
+```
 
 isi minimal:
 
@@ -77,11 +84,15 @@ framework = espidf
 monitor_speed = 115200
 ```
 
+---
+
 ## 5. Setup WiFi
 
 edit file:
 
-`include/globals.h`
+```c
+include/globals.h
+```
 
 isi:
 
@@ -90,17 +101,21 @@ isi:
 #define WIFI_PASS "password_wifi_kamu"
 ```
 
+---
+
 ## 6. Upload ke ESP32
 
 klik di PlatformIO:
 
-- Upload
+- `Upload`
 
 atau via terminal:
 
 ```bash
 pio run -t upload
 ```
+
+---
 
 ## 7. Monitor Serial (optional)
 
@@ -121,7 +136,9 @@ ESP32-C3 akan:
 
 flow:
 
+```text
 Minecraft Client → ESP32-C3 Server
+```
 
 ---
 
@@ -153,8 +170,8 @@ kalau error:
 
 - cek WiFi credential
 - pastikan board ESP32-C3 benar
-- jangan paksa multi player terlalu banyak
-- monitor serial untuk debug
+- jangan paksa multiplayer terlalu banyak
+- monitor serial buat debug
 
 ---
 
