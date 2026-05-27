@@ -6,7 +6,7 @@ ini adalah versi **bareiron yang udah disiapin biar tinggal upload di PlatformIO
 
 jadi tujuan repo ini simpel:
 
-> clone → buka di VSCode → upload ke ESP32-C3 → jalan
+> clone → buka di VSCode → upload ke ESP32-C3 → lihat IP → connect → chaos
 
 project ini adalah port / versi siap pakai dari bareiron Minecraft server, jadi kamu gak perlu ribet setup manual yang aneh-aneh.
 
@@ -16,7 +16,10 @@ project ini adalah port / versi siap pakai dari bareiron Minecraft server, jadi 
 
 project ini adalah:
 
-MAKSA BIKIN SERVER MINECRAFT DI BENDA YANG LEBIH KECIL DARI KOREK GAS YANG SERING ILANG DI WARUNG ITU!!!
+- experimental Minecraft server implementation
+- bukan vanilla full compliant
+- performa tergantung ESP32 (RAM & WiFi)
+- cocok buat riset, eksperimen, dan konten Ngulikom
 
 ---
 
@@ -117,28 +120,50 @@ pio run -t upload
 
 ---
 
-## 7. Monitor Serial (optional)
+# 👀 CARA LIAT IP DAN PORT
 
-```bash
-pio device monitor
-```
+kalau ESP32 sudah nyala, paling gampang buat lihat **IP** dan **port** adalah pakai **Arduino IDE Serial Monitor**.
+
+## Langkahnya:
+
+1. colok ESP32-C3 ke laptop / PC
+2. buka **Arduino IDE**
+3. pilih board ESP32-C3 yang sesuai
+4. pilih port yang muncul
+5. buka **Serial Monitor**
+6. pastikan baud rate sesuai dengan project
+7. kalau belum muncul log, **cabut lalu pasang lagi kabel ESP32**
+8. nanti ESP32 akan boot ulang dan log biasanya muncul lagi
+9. dari log itu kamu bisa lihat:
+   - IP address
+   - port server
+   - status connect WiFi
 
 ---
 
-# 🎮 CARA KERJA
+## Contoh log yang dicari
 
-ESP32-C3 akan:
-
-- connect ke WiFi
-- menjalankan Minecraft server minimal
-- menerima koneksi client Minecraft
-- menjalankan logic server sederhana
-
-flow:
+biasanya di Serial Monitor akan muncul info seperti:
 
 ```text
-Minecraft Client → ESP32-C3 Server
+WiFi connected
+IP: 192.168.x.x
+PORT: 25565
 ```
+
+kalau sudah muncul IP dan port, tinggal masukin ke Minecraft client.
+
+---
+
+# 🎮 CARA PAKAI
+
+1. jalankan project di ESP32
+2. buka Arduino IDE Serial Monitor
+3. lihat IP dan port
+4. buka Minecraft client
+5. connect ke IP itu
+6. masuk server
+7. chaos dimulai
 
 ---
 
@@ -172,6 +197,7 @@ kalau error:
 - pastikan board ESP32-C3 benar
 - jangan paksa multiplayer terlalu banyak
 - monitor serial buat debug
+- kalau log gak muncul, cabut-pasang kabel ESP32 buat reset
 
 ---
 
