@@ -16,10 +16,7 @@ project ini adalah port / versi siap pakai dari bareiron Minecraft server, jadi 
 
 project ini adalah:
 
-- experimental Minecraft server implementation
-- bukan vanilla full compliant
-- performa tergantung ESP32 (RAM & WiFi)
-- cocok buat riset, eksperimen, dan konten Ngulikom
+JALANIN SERVER MINECRAFT DI BENDA SEGEDE FLASHDISK
 
 ---
 
