@@ -761,8 +761,8 @@ void wifi_init () {
 
   wifi_config_t wifi_config = {
     .sta = {
-      .ssid = "Warung berkah",
-      .password = "27101995",
+      .ssid = WIFI_SSID,
+      .password = WIFI_PASS,
       .threshold.authmode = WIFI_AUTH_WPA2_PSK
     }
   };
